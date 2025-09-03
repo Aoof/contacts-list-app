@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ContactListProject.bus.Contact">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAFAAgCBQAQAkAAEAAAAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>bus\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ContactListProject.bus.DateTimeCustom">
+    <Position X="16.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAJAAAAAAEAAAAAAAAAAQAACIEAAAiAAAAAAA=</HashCode>
+      <FileName>bus\DateTimeCustom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ContactListProject.bus.EnumType">
+    <Position X="14.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAABAA=</HashCode>
+      <FileName>bus\EnumType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
