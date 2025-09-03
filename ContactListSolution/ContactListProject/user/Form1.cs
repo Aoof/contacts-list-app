@@ -163,16 +163,6 @@ namespace ContactListProject
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             var contactNumber = textBoxContactNumber.Text.Trim();
-            var firstName = textBoxFirstName.Text.Trim();
-            var lastName = textBoxLastName.Text.Trim();
-            var email = textBoxEmail.Text.Trim();
-            var contactType = comboBoxContactType.SelectedItem;
-
-            var day = numericUpDownDay.Text.Trim();
-            var month = numericUpDownMonth.Text.Trim();
-            var year = numericUpDownYear.Text.Trim();
-            var hour = numericUpDownHour.Text.Trim();
-            var minute = numericUpDownMinute.Text.Trim();
 
             var results = contacts.AsEnumerable();
 

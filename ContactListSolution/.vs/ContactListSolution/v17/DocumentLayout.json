@@ -19,11 +19,7 @@
       "RelativeMoniker": "D:0:0:{4FB3B74A-C1FB-4EB1-B202-C03B738909C8}|ContactListProject\\ContactListProject.csproj|solutionrelative:contactlistproject\\bus\\enumtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FB3B74A-C1FB-4EB1-B202-C03B738909C8}|ContactListProject\\ContactListProject.csproj|c:\\users\\aoof\\documents\\coding\\contacts-list-app\\contactlistsolution\\contactlistproject\\bus\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FB3B74A-C1FB-4EB1-B202-C03B738909C8}|ContactListProject\\ContactListProject.csproj|solutionrelative:contactlistproject\\bus\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FB3B74A-C1FB-4EB1-B202-C03B738909C8}|ContactListProject\\ContactListProject.csproj|c:\\users\\aoof\\documents\\coding\\contacts-list-app\\contactlistsolution\\contactlistproject\\bus\\busdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "AbsoluteMoniker": "D:0:0:{4FB3B74A-C1FB-4EB1-B202-C03B738909C8}|ContactListProject\\ContactListProject.csproj|C:\\Users\\aoof\\Documents\\Coding\\contacts-list-app\\ContactListSolution\\contactlistproject\\bus\\busdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
       "RelativeMoniker": "D:0:0:{4FB3B74A-C1FB-4EB1-B202-C03B738909C8}|ContactListProject\\ContactListProject.csproj|solutionrelative:contactlistproject\\bus\\busdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
     }
   ],
@@ -48,7 +44,7 @@
               "RelativeDocumentMoniker": "ContactListProject\\user\\Form1.cs",
               "ToolTip": "C:\\Users\\aoof\\Documents\\Coding\\contacts-list-app\\ContactListSolution\\ContactListProject\\user\\Form1.cs",
               "RelativeToolTip": "ContactListProject\\user\\Form1.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAuwLYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-03T13:20:57.591Z",
               "EditorCaption": ""
@@ -62,33 +58,18 @@
               "ToolTip": "C:\\Users\\aoof\\Documents\\Coding\\contacts-list-app\\ContactListSolution\\ContactListProject\\user\\Form1.cs [Design]",
               "RelativeToolTip": "ContactListProject\\user\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T12:27:11.802Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-03T12:27:11.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "BusDiagram.cd",
               "DocumentMoniker": "C:\\Users\\aoof\\Documents\\Coding\\contacts-list-app\\ContactListSolution\\ContactListProject\\bus\\BusDiagram.cd",
               "RelativeDocumentMoniker": "ContactListProject\\bus\\BusDiagram.cd",
               "ToolTip": "C:\\Users\\aoof\\Documents\\Coding\\contacts-list-app\\ContactListSolution\\ContactListProject\\bus\\BusDiagram.cd",
               "RelativeToolTip": "ContactListProject\\bus\\BusDiagram.cd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2025-09-03T13:05:42.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Contact.cs",
-              "DocumentMoniker": "C:\\Users\\aoof\\Documents\\Coding\\contacts-list-app\\ContactListSolution\\ContactListProject\\bus\\Contact.cs",
-              "RelativeDocumentMoniker": "ContactListProject\\bus\\Contact.cs",
-              "ToolTip": "C:\\Users\\aoof\\Documents\\Coding\\contacts-list-app\\ContactListSolution\\ContactListProject\\bus\\Contact.cs",
-              "RelativeToolTip": "ContactListProject\\bus\\Contact.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowEAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T12:55:52.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T13:05:42.973Z"
             },
             {
               "$type": "Document",
@@ -100,8 +81,7 @@
               "RelativeToolTip": "ContactListProject\\bus\\DateTimeCustom.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T12:46:02.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T12:46:02.131Z"
             },
             {
               "$type": "Document",
@@ -113,8 +93,7 @@
               "RelativeToolTip": "ContactListProject\\bus\\EnumType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T12:27:32.875Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-03T12:27:32.875Z"
             }
           ]
         }
