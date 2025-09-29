@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace WinFormsContactList_Project
@@ -23,7 +24,7 @@ namespace WinFormsContactList_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Database Error", 
+                MessageBox.Show($"Error loading data: {ex.Message}", "Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -36,7 +37,7 @@ namespace WinFormsContactList_Project
             var errors = ValidateInput();
             if (errors.Count > 0)
             {
-                MessageBox.Show(string.Join("\n", errors), "Validation Errors", 
+                MessageBox.Show(string.Join("\n", errors), "Validation Errors",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -57,19 +58,19 @@ namespace WinFormsContactList_Project
                         command.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
 
                         int rowsAffected = command.ExecuteNonQuery();
-                        
+
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Contact added successfully!", "Success", 
+                            MessageBox.Show("Contact added successfully!", "Success",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
+
                             RefreshDataGrid();
                             ClearInputFields();
                             txtContactNumber.Focus();
                         }
                         else
                         {
-                            MessageBox.Show("Failed to add contact.", "Error", 
+                            MessageBox.Show("Failed to add contact.", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
@@ -79,18 +80,18 @@ namespace WinFormsContactList_Project
             {
                 if (sqlEx.Number == 2627) // Unique constraint violation
                 {
-                    MessageBox.Show("Contact Number already exists. Please use a different number.", 
+                    MessageBox.Show("Contact Number already exists. Please use a different number.",
                         "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show($"Database Error: {sqlEx.Message}", "Database Error", 
+                    MessageBox.Show($"Database Error: {sqlEx.Message}", "Database Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Unexpected Error", 
+                MessageBox.Show($"Error: {ex.Message}", "Unexpected Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -99,7 +100,7 @@ namespace WinFormsContactList_Project
         {
             if (dgvContacts.CurrentRow == null)
             {
-                MessageBox.Show("Please select a contact to update.", "No Selection", 
+                MessageBox.Show("Please select a contact to update.", "No Selection",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -107,14 +108,14 @@ namespace WinFormsContactList_Project
             var errors = ValidateInput();
             if (errors.Count > 0)
             {
-                MessageBox.Show(string.Join("\n", errors), "Validation Errors", 
+                MessageBox.Show(string.Join("\n", errors), "Validation Errors",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!TryGetSelectedContactNumber(out int originalContactNumber))
             {
-                MessageBox.Show("Invalid contact selection.", "Error", 
+                MessageBox.Show("Invalid contact selection.", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -137,18 +138,18 @@ namespace WinFormsContactList_Project
                         command.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
 
                         int rowsAffected = command.ExecuteNonQuery();
-                        
+
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Contact updated successfully!", "Success", 
+                            MessageBox.Show("Contact updated successfully!", "Success",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
+
                             RefreshDataGrid();
                             ClearInputFields();
                         }
                         else
                         {
-                            MessageBox.Show("Failed to update contact.", "Error", 
+                            MessageBox.Show("Failed to update contact.", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
@@ -158,18 +159,18 @@ namespace WinFormsContactList_Project
             {
                 if (sqlEx.Number == 2627)
                 {
-                    MessageBox.Show("Contact Number already exists. Please use a different number.", 
+                    MessageBox.Show("Contact Number already exists. Please use a different number.",
                         "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show($"Database Error: {sqlEx.Message}", "Database Error", 
+                    MessageBox.Show($"Database Error: {sqlEx.Message}", "Database Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}", "Unexpected Error", 
+                MessageBox.Show($"Error: {ex.Message}", "Unexpected Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -178,7 +179,7 @@ namespace WinFormsContactList_Project
         {
             if (dgvContacts.CurrentRow == null)
             {
-                MessageBox.Show("Please select a contact to delete.", "No Selection", 
+                MessageBox.Show("Please select a contact to delete.", "No Selection",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -187,14 +188,14 @@ namespace WinFormsContactList_Project
             string lastName = dgvContacts.CurrentRow.Cells["colLastName"].Value.ToString();
             string contactName = $"{firstName} {lastName}";
 
-            var result = MessageBox.Show($"Are you sure you want to delete {contactName}?", 
+            var result = MessageBox.Show($"Are you sure you want to delete {contactName}?",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 if (!TryGetSelectedContactNumber(out int contactNumber))
                 {
-                    MessageBox.Show("Invalid contact selection.", "Error", 
+                    MessageBox.Show("Invalid contact selection.", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -211,18 +212,18 @@ namespace WinFormsContactList_Project
                             command.Parameters.AddWithValue("@ContactNumber", contactNumber);
 
                             int rowsAffected = command.ExecuteNonQuery();
-                            
+
                             if (rowsAffected > 0)
                             {
-                                MessageBox.Show("Contact deleted successfully!", "Success", 
+                                MessageBox.Show("Contact deleted successfully!", "Success",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                
+
                                 RefreshDataGrid();
                                 ClearInputFields();
                             }
                             else
                             {
-                                MessageBox.Show("Failed to delete contact.", "Error", 
+                                MessageBox.Show("Failed to delete contact.", "Error",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
@@ -230,7 +231,7 @@ namespace WinFormsContactList_Project
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex.Message}", "Database Error", 
+                    MessageBox.Show($"Error: {ex.Message}", "Database Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -282,15 +283,15 @@ namespace WinFormsContactList_Project
 
         private bool IsValidEmail(string email)
         {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
+            /*
+             * ^ - $ Start and end of the string
+             * [^@\s]+ - One or more characters that are not '@' or whitespace
+             * +@ - The '@' symbol
+             * [^@\s]+ - One or more characters that are not '@' or whitespace
+             * +\. - A dot '.'
+             * [^@\s]+ - One or more characters that are not '@' or whitespace
+             */
+            return Regex.IsMatch(email ?? "", @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
 
         private void ClearInputFields()
@@ -312,7 +313,7 @@ namespace WinFormsContactList_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error refreshing data: {ex.Message}", "Database Error", 
+                MessageBox.Show($"Error refreshing data: {ex.Message}", "Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
